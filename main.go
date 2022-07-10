@@ -65,6 +65,7 @@ func Perform(args Arguments, writer io.Writer) error {
 	case "remove":
 		err = handler.Remove(args["id"], writer)
 	default:
+
 		err = &errs.ErrUnallowableFlagValue{Flag: "operation", Value: args["operation"]}
 	}
 

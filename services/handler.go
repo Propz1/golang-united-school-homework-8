@@ -16,6 +16,7 @@ func NewHandler(st *storage.Storage) *handler {
 }
 
 func (h *handler) Add(item string, w io.Writer) error {
+
 	err := h.storage.Add(item)
 
 	if err != nil {

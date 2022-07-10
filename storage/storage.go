@@ -45,6 +45,8 @@ func openConnection(dir string) (*os.File, error) {
 
 func (s *Storage) GetAll() ([]models.User, error) {
 
+	users = nil
+
 	file, err := openConnection(s.Dir)
 
 	if err != nil {
@@ -71,6 +73,8 @@ func (s *Storage) GetAll() ([]models.User, error) {
 }
 
 func (s *Storage) GetOne(id string) (models.User, error) {
+
+	users = nil
 
 	file, err := openConnection(s.Dir)
 
@@ -105,6 +109,8 @@ func (s *Storage) GetOne(id string) (models.User, error) {
 }
 
 func (s *Storage) Delete(id string) error {
+
+	users = nil
 
 	file, err := openConnection(s.Dir)
 
@@ -157,6 +163,8 @@ func (s *Storage) Delete(id string) error {
 }
 
 func (s *Storage) Add(item string) error {
+
+	users = nil
 
 	file, err := openConnection(s.Dir)
 
